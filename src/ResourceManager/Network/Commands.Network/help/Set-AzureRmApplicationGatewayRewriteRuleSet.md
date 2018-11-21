@@ -14,8 +14,8 @@ Modifies a rewrite rule set for an application gateway.
 
 ```
 Set-AzureRmApplicationGatewayRewriteRuleSet -ApplicationGateway <PSApplicationGateway> -Name <String>
- -RewriteRules <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRule]>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ -RewriteRule <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRule]>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,7 +26,7 @@ The **Set-AzureRmApplicationGatewayRewriteRuleSet** cmdlet modifies a request ro
 ### Example 1
 ```powershell
 PS C:\>$AppGw = Get-AzureRmApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-PS C:\> $AppGw = Set-AzureRmApplicationGatewayRewriteRuleSet -ApplicationGateway $AppGw -Name "ruleset1" -RewriteRules $rule
+PS C:\> $AppGw = Set-AzureRmApplicationGatewayRewriteRuleSet -ApplicationGateway $AppGw -Name "ruleset1" -RewriteRule $rule
 ```
 
 The first command gets the application gateway named ApplicationGateway01 and stores it in the $AppGw variable.
@@ -79,7 +79,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RewriteRules
+### -RewriteRule
 List of rewrite rules
 
 ```yaml
@@ -90,37 +90,6 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

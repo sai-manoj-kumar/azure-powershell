@@ -15,8 +15,8 @@ Creates a rewrite rule actionset for an application gateway.
 ```
 New-AzureRmApplicationGatewayRewriteRuleActionSet
  [-RequestHeaderConfigurations <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHeaderConfiguration]>]
- [-ResponseHeaderConfigurations <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHeaderConfiguration]>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ResponseHeaderConfiguration <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHeaderConfiguration]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,7 +26,7 @@ New-AzureRmApplicationGatewayRewriteRuleActionSet
 
 ### Example 1
 ```powershell
-PS C:\> $action = New-AzureRmApplicationGatewayRewriteRuleActionSet -ResponseHeaderConfigurations $hc
+PS C:\> $action = New-AzureRmApplicationGatewayRewriteRuleActionSet -ResponseHeaderConfiguration $hc
 ```
 
 This command creates a rewrite rule actionset and stores the result in the variable named $action.
@@ -63,7 +63,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeaderConfigurations
+### -ResponseHeaderConfiguration
 List of response header configurations
 
 ```yaml
@@ -74,37 +74,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
